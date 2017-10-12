@@ -3,6 +3,7 @@ require 'simplecov'
 require 'simplecov-console'
 
 require 'player'
+require 'game'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
     SimpleCov::Formatter::Console,
