@@ -3,11 +3,20 @@
     "coverage": {
       "/Users/kdownes/MakersAcademy/Projects/tic_tac_toe/spec/game_spec.rb": [
         1,
-        2,
+        4,
         null,
-        2,
-        2,
+        4,
+        4,
         null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
         1,
         1,
         null,
@@ -25,6 +34,6 @@
         null
       ]
     },
-    "timestamp": 1507828662
+    "timestamp": 1507829887
   }
 }

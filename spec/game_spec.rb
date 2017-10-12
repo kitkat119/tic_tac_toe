@@ -7,4 +7,13 @@ describe Game do
   it "starts with two players" do
     expect(game.player_1).to eq(player_1)
   end
+
+  it "starts with player 1's turn" do
+    expect(game.current_turn).to eq(player_1)
+  end
+
+  it "switches player turns" do
+    game.switch_turns
+    expect(game.current_turn).to eq(player_2)
+  end
 end
