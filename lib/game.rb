@@ -16,5 +16,4 @@ class Game
   def opponent_of(player)
     player == player_1 ? player_2 : player_1
   end
-
 end
