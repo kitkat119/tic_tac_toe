@@ -3,10 +3,12 @@ class Board
 attr_reader :state
 
   def initialize
-    @state = ["", "", "", "", "", "", "", "", ""]
+    @state = ["", "", "",
+              "", "", "",
+               "", "", ""]
   end
 
-  def update(index, weapon)
+  def update(player, index, weapon)
     weapon == "X" ? @state[index] = "X" : @state[index] = "O"
   end
 end

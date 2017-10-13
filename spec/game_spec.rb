@@ -1,8 +1,11 @@
 describe Game do
-  subject(:game) { described_class.new(player_1, player_2) }
+  subject(:game) { described_class.new(player_1, player_2, board) }
 
   let(:player_1) { double :player, weapon: "X" }
   let(:player_2) { double :player, weapon: "O" }
+  let(:board) { double :board, state: ["", "", "", "", "", "", "", "", ""] }
+  let(:index) { 1 }
+  let(:weapon) { "X" }
 
   it "starts with two players" do
     expect(game.players.length).to eq(2)
@@ -23,6 +26,11 @@ describe Game do
   it "switches player turns" do
     game.switch_turns
     expect(game.current_turn).to eq(player_2)
+  end
+
+  it "lets the player make a move" do
+    expect(board).to receive(:update)
+    game.make_move(player_1, index, weapon)
   end
 
 end

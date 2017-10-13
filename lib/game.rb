@@ -1,11 +1,11 @@
 class Game
 
-  attr_reader :players, :current_turn
+  attr_reader :players, :current_turn, :board
 
-  def initialize(player_1, player_2, board_class = Board)
+  def initialize(player_1, player_2, board)
     @players = [player_1, player_2]
     @current_turn = player_1
-    @board = board_class.new
+    @board = board
   end
 
   def player_1
@@ -18,6 +18,10 @@ class Game
 
   def switch_turns
     @current_turn = opponent_of(current_turn)
+  end
+
+  def make_move(player, index, weapon)
+    @board.update(player, index, weapon)
   end
 
   private
