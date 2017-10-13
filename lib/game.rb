@@ -5,7 +5,7 @@ class Game
   def initialize(player_1, player_2, board_class = Board)
     @players = [player_1, player_2]
     @current_turn = player_1
-    @board = board_class
+    @board = board_class.new
   end
 
   def player_1

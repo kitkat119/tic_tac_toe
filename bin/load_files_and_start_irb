@@ -4,5 +4,6 @@ require 'irb'
 puts 'Loading files..'
 require './lib/player.rb'
 require './lib/game.rb'
+require './lib/board.rb'
 
 IRB.start
