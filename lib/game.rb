@@ -16,15 +16,20 @@ class Game
     @players.last
   end
 
+  def make_move(current_turn, index)
+    @board.update(current_turn, index)
+    game_over?
+  end
+
+  private
+  def game_over?
+    !@board.state.include?("") ? "The board is full - GAME OVER" : switch_turns
+  end
+
   def switch_turns
     @current_turn = opponent_of(current_turn)
   end
 
-  def make_move(current_turn, index)
-    @board.update(current_turn, index)
-  end
-
-  private
   def opponent_of(player)
     player == player_1 ? player_2 : player_1
   end

@@ -9,7 +9,7 @@ attr_reader :state
   end
 
   def update(player, index)
-    raise('This field is already taken, try again!') if @state[index] != ""
+    raise('Try again!') if @state[index] != ""
     player.weapon == "X" ? @state[index] = "X" : @state[index] = "O"
   end
 end

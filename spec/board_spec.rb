@@ -16,6 +16,6 @@ describe Board do
 
   it "only updates a field that is not already taken" do
     board.update(player_1, index)
-    expect{ board.update(player_1, index) }.to raise_error 'This field is already taken, try again!'
+    expect{ board.update(player_1, index) }.to raise_error 'Try again!'
   end
 end
