@@ -1,11 +1,19 @@
 class Game
 
-  attr_reader :player_1, :player_2, :current_turn
+  attr_reader :players, :current_turn
 
-  def initialize(player_1 = Player.new("X"), player_2 = Player.new("O"))
-    @player_1 = player_1
-    @player_2 = player_2
+  def initialize(player_1, player_2, board_class = Board)
+    @players = [player_1, player_2]
     @current_turn = player_1
+    @board = board_class
+  end
+
+  def player_1
+    @players.first
+  end
+
+  def player_2
+    @players.last
   end
 
   def switch_turns

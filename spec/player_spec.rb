@@ -1,9 +1,9 @@
 describe Player do
-  subject(:player) { described_class.new(name) }
+  subject(:player) { described_class.new(weapon) }
 
-  let(:name) {"X"}
+  let(:weapon) {"X"}
 
-  it "gives the player a name of X or O" do
-    expect(player.name).to eq(name)
+  it "gives the player a weapon of X or O" do
+    expect(player.weapon).to eq(weapon)
   end
 end

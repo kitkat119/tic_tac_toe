@@ -2,8 +2,9 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 
-require 'player'
 require 'game'
+require 'player'
+require 'board'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
     SimpleCov::Formatter::Console,
