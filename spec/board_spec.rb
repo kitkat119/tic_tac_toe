@@ -3,7 +3,6 @@ describe Board do
 
   let(:state) { ["", "", "", "", "", "", "", "", ""] }
   let(:index) { 1 }
-  let(:weapon) { "X" }
   let(:player_1) { double :player, weapon: "X" }
 
   it "has 9 possible cells" do
@@ -11,7 +10,7 @@ describe Board do
   end
 
   it "takes the player's move and updates the board" do
-    board.update(player_1, index, weapon)
+    board.update(player_1, index)
     expect(board.state).to include("X")
   end
 end

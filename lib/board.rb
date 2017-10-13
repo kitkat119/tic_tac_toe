@@ -8,7 +8,7 @@ attr_reader :state
                "", "", ""]
   end
 
-  def update(player, index, weapon)
-    weapon == "X" ? @state[index] = "X" : @state[index] = "O"
+  def update(player, index)
+    player.weapon == "X" ? @state[index] = "X" : @state[index] = "O"
   end
 end

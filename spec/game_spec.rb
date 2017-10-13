@@ -5,7 +5,6 @@ describe Game do
   let(:player_2) { double :player, weapon: "O" }
   let(:board) { double :board, state: ["", "", "", "", "", "", "", "", ""] }
   let(:index) { 1 }
-  let(:weapon) { "X" }
 
   it "starts with two players" do
     expect(game.players.length).to eq(2)
@@ -30,7 +29,7 @@ describe Game do
 
   it "lets the player make a move" do
     expect(board).to receive(:update)
-    game.make_move(player_1, index, weapon)
+    game.make_move(player_1, index)
   end
 
 end

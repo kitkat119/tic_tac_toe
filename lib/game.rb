@@ -20,8 +20,8 @@ class Game
     @current_turn = opponent_of(current_turn)
   end
 
-  def make_move(player, index, weapon)
-    @board.update(player, index, weapon)
+  def make_move(current_turn, index)
+    @board.update(current_turn, index)
   end
 
   private
