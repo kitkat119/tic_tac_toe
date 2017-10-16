@@ -1,11 +1,13 @@
 class Game
-  attr_reader :players, :current_turn, :board
+  attr_reader :players, :current_turn, :board, :moves
 
-  def initialize(player_1, player_2, board, checker_class = Checker)
+  def initialize(player_1, player_2, board, checker_class = Checker, moves_class = Moves, printer_class = Printer)
     @players = [player_1, player_2]
     @current_turn = player_1
     @board = board
     @checker = checker_class
+    @moves = moves_class.new
+    @printer = printer_class
   end
 
   def player_1
@@ -18,19 +20,12 @@ class Game
 
   def make_move(current_turn, index)
     @board.update(current_turn, index)
-    check_for_winner
-    game_over?
+    @moves.add_move_to_list(current_turn, current_turn.weapon, index)
+    @printer.new(@checker.new(@board, current_turn.weapon), @moves).print
+    switch_turns
   end
 
   private
-
-  def check_for_winner
-    @checker.new(@board).winning_combo
-  end
-
-  def game_over?
-    !@board.state.include?('') ? 'The board is full - GAME OVER' : switch_turns
-  end
 
   def switch_turns
     @current_turn = opponent_of(current_turn)
