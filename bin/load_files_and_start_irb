@@ -7,6 +7,5 @@ require './lib/game.rb'
 require './lib/board.rb'
 require './lib/checker.rb'
 require './lib/printer.rb'
-require './lib/moves.rb'
 
 IRB.start

@@ -14,7 +14,7 @@ bundle
 # Create a new game with two players and a board.
 game = Game.new(Player.new("O"), Player.new("X"), Board.new)
 # Use this command to check the state of the board.
-game.board.state
+game.current_state
 # To check whose turn it is currently.
 game.current_turn
 # Current player makes a move, passing in their chosen index of the board. The turn automatically switches to the opponent.

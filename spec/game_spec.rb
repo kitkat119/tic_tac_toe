@@ -22,6 +22,11 @@ describe Game do
     expect(game.current_turn).to eq player_1
   end
 
+  it "returns the state of the game" do
+    expect(board).to receive(:state)
+    game.current_state
+  end
+
   it 'lets the player make a move' do
     expect(board).to receive(:update)
     game.make_move(player_1, index)

@@ -7,7 +7,6 @@ require 'board'
 require 'player'
 require 'checker'
 require 'printer'
-require 'moves'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
    SimpleCov::Formatter::Console,

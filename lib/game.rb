@@ -24,6 +24,10 @@ class Game
     switch_turns
   end
 
+  def current_state
+    @board.state
+  end
+
   private
 
   def switch_turns
