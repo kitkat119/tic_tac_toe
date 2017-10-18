@@ -19,7 +19,6 @@ class Game
 
   def make_move(current_turn, index)
     @board.update(current_turn, index)
-    # @moves.add_move_to_list(current_turn, current_turn.weapon, index)
     @printer.new(@checker.new(@board, current_turn.weapon)).print
     switch_turns
   end

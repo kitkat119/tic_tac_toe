@@ -1,8 +1,7 @@
 class Printer
-
+attr_reader :checker
   def initialize(checker)
     @checker = checker
-    # @moves = moves
   end
 
   def print
