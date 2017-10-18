@@ -11,14 +11,14 @@ describe Printer do
 
 
   it "prints the winner if there is a winning combination present on the board" do
-    expect(printer.print).to eq "Player #{moves.list.last[1]} has won!"
+    expect { printer.print }.to output("Player #{moves.list.last[1]} has won!\n").to_stdout
   end
 
   it "notifies that the game is over once the board is full" do
-    expect(printer2.print).to eq "The board is full - GAME OVER"
+    expect { printer2.print }.to output("The board is full - GAME OVER\n").to_stdout
   end
 
   it "otherwise continues the game" do
-    expect(printer3.print).to eq "No body has won yet - Keep playing!"
+    expect { printer3.print }.to output("No body has won yet - Keep playing!\n").to_stdout
   end
 end

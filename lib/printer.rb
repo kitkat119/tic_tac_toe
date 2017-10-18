@@ -7,11 +7,11 @@ class Printer
 
   def print
     if @checker.winning_combo?
-      p "Player #{@moves.list.last[1]} has won!"
+      puts "Player #{@moves.list.last[1]} has won!"
     elsif !@checker.board.include?('')
-      p "The board is full - GAME OVER"
+      puts "The board is full - GAME OVER"
     else
-      p "No body has won yet - Keep playing!"
+      puts "No body has won yet - Keep playing!"
     end
   end
 end
