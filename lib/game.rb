@@ -1,12 +1,11 @@
 class Game
   attr_reader :players, :current_turn, :board, :moves
 
-  def initialize(player_1, player_2, board, checker_class = Checker, moves_class = Moves, printer_class = Printer)
+  def initialize(player_1, player_2, board, checker_class = Checker, printer_class = Printer)
     @players = [player_1, player_2]
     @current_turn = player_1
     @board = board
     @checker = checker_class
-    @moves = moves_class.new
     @printer = printer_class
   end
 
@@ -20,8 +19,8 @@ class Game
 
   def make_move(current_turn, index)
     @board.update(current_turn, index)
-    @moves.add_move_to_list(current_turn, current_turn.weapon, index)
-    @printer.new(@checker.new(@board, current_turn.weapon), @moves).print
+    # @moves.add_move_to_list(current_turn, current_turn.weapon, index)
+    @printer.new(@checker.new(@board, current_turn.weapon)).print
     switch_turns
   end
 

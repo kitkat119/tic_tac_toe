@@ -1,13 +1,13 @@
 class Printer
 
-  def initialize(checker, moves)
+  def initialize(checker)
     @checker = checker
-    @moves = moves
+    # @moves = moves
   end
 
   def print
     if @checker.winning_combo?
-      puts "Player #{@moves.list.last[1]} has won!"
+      puts "Player #{@checker.current_weapon} has won!"
     elsif !@checker.board.include?('')
       puts "The board is full - GAME OVER"
     else

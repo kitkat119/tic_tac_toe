@@ -1,6 +1,6 @@
 class Checker
 
-  attr_reader :board
+  attr_reader :board, :current_weapon
 
   def initialize(board, current_weapon)
     @board = board.state
